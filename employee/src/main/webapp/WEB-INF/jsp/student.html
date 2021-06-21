@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#tamil{
+color: blue
+}
+#english {
+color:gray;
+}
+
+#science {
+color:purple;
+}
+
+
+</style>
+<script>
+function findTotal(){
+	document.getElementById("maths").disabled = "true";
+	console.log(document.getElementById("tamil"));
+	console.log(document.getElementById("tamil").value);
+	console.log(document.getElementById("tamil").value.length);
+	console.log(document.getElementById("tamil").value.length === 0);
+	console.log(document.getElementById("tamil").value.toString().trim().length);
+	
+	if((document.getElementById("tamil") === null || document.getElementById("tamil").value === "" || document.getElementById("tamil").value.trim().length === 0)) {
+		document.getElementById("total").innerHTML = "Enter all values";
+		document.getElementById("total").style.color = "red";
+		return;
+	}
+	
+	var total = parseInt(document.getElementById("tamil").value)
+				+ parseInt(document.getElementById("english").value)
+				+ parseInt(document.getElementById("maths").value)
+				+ parseInt(document.getElementById("science").value)
+				+ parseInt(document.getElementById("social").value);
+	
+	
+	document.getElementById("total").innerHTML = "Your total marks : " + total;
+	}
+	
+function keydownfn(){
+	
+	var sciencemark = prompt("Key Down Pressed");
+	document.getElementById("science").value=sciencemark;
+	
+}
+
+function changestyleonfocus(x) {
+	
+	x.style.background="yellow";
+}
+
+
+function changestyleonblur(x) {
+	
+	x.style.background="none";
+}
+/* 
+window.onload= function() {
+	
+	document.getElementById("english").autofocus = "true";
+	//alert(document.getElementById("english").autofocus);
+} */
+/* 
+window.onload = function() {
+	document.getElementById("mydivid").addEventListener("focusin", findTotal);
+}
+
+*/
+
+/* window.onload = function() {
+	document.getElementById('foo').validationMessage;
+}  */
+</script>
+</head>
+<body>
+
+<form id="myFormId">
+
+<H3>Enter subject marks to calculate average</H3>
+<div id="mydivid"><pre>
+
+Tamil   : <input type="text" name="tamil" id="tamil" required ><br><br>
+English   :   <input type="text" name="english" id="english"><br><br>
+
+Maths   :   <input type="text" name="maths" id="maths" required><br><br>
+Science   :  <input type="text" name="science" id="science" required><br><br>
+Social   :  <input type="text" name="social" id="social" required>
+
+<input type="submit" value="Get Total" onclick="findTotal();">
+<input type="reset">
+<!-- 
+<div style="border: 10px;width: 200px;height: 100px; overflow:hidden;">HelloHddddddddddddddddddddddddddddd<br>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddello</div>
+ --><!-- 
+<input type="button" value="Home" onclick="window.location = '/manoj/getStudent'">
+ -->
+</pre>
+
+</div>
+
+
+<div id="total"></div>
+
+</form>
+
+
+</body>
+</html>

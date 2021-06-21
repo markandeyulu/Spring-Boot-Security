@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+/* $(document).ready(function(){
+  $("#one").click(function(){
+    $(this).hide();
+  });
+});
+ */
+/*  window.onload=function() {
+	
+	 var ptags = document.getElementsByTagName("p");
+	// alert(ptags.length);
+	 for(var i=0; i < ptags.length ; i++) {
+		ptags[i].addEventListener('click', showcomment);
+	 }
+	
+}  */
+
+$(function(){
+$("p").hover(function(){
+    $(this).hide();
+   // alert("test");
+  });
+}); 
+
+function showcomment() {
+	this.style.visibility="hidden";
+}
+
+</script>
+</head>
+<body>
+
+<p id="one">If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+</body>
+</html>
